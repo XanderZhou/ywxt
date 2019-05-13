@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block app_content %}
+<h1>增加收藏网页</h1>
+<br>
+    <div class="row">
+        <div class="col-md-6">
+            {% import 'bootstrap/wtf.html' as wtf %}
+            {{ wtf.quick_form(add_site) }}
+        </div>
+    </div>
+{% endblock %}

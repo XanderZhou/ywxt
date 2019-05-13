@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block styles %}{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"> 
+<!-- 鼠标覆盖动画 -->
+{% endblock %}
+
+{% block app_content %}
+
+<div class="row">
+    <div class="panel-heading">
+        <h3 class="panel-title">系统</h3>
+    </div>
+    {% for site in xt %}
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <div class="xe-widget xe-conversations box2" onclick="window.open('https://dribbble.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ site.site_url }}">
+            <div class="xe-comment-entry">
+                <a class="xe-user-img">
+                    <img src="/static/images/{{ site.image }}" class="img-circle" width="40" >
+                </a>
+             <div class="xe-comment">
+                <a href="{{ site.site_url }}" class="site-name">
+                    <strong>{{ site.site_name }}</strong>
+                </a>
+                <p class="site-describe">{{ site.describe }}</p>
+            </div>
+            </div>
+        </div>
+   </div>
+   {% endfor %}
+</div>
+
+<div class="row">
+    <div class="panel-heading">
+        <h3 class="panel-title">网络</h3>
+    </div>
+    {% for site in wl %}
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <div class="xe-widget xe-conversations box2" onclick="window.open('https://dribbble.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ site.site_url }}">
+            <div class="xe-comment-entry">
+                <a class="xe-user-img">
+                    <img src="/static/images/{{ site.image }}" class="img-circle" width="40" >
+                </a>
+                <div class="xe-comment">
+                <a href="{{ site.site_url }}" class="site-name">
+                    <strong>{{ site.site_name }}</strong>
+                </a>
+                <p class="site-describe">{{ site.describe }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row">
+    <div class="panel-heading">
+        <h3 class="panel-title">存储</h3>
+    </div>
+    {% for site in cc %}
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <div class="xe-widget xe-conversations box2" onclick="window.open('https://dribbble.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ site.site_url }}">
+            <div class="xe-comment-entry">
+                <a class="xe-user-img">
+                    <img src="/static/images/{{ site.image }}" class="img-circle" width="40" >
+                </a>
+                <div class="xe-comment">
+                <a href="{{ site.site_url }}" class="site-name">
+                    <strong>{{ site.site_name }}</strong>
+                </a>
+                <p class="site-describe">{{ site.describe }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    
+<div class="row">
+    <div class="panel-heading">
+        <h3 class="panel-title">其它</h3>
+    </div>
+    {% for site in qt %}
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <div class="xe-widget xe-conversations box2" onclick="window.open('https://dribbble.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ site.site_url }}">
+            <div class="xe-comment-entry">
+                <a class="xe-user-img">
+                    <img src="/static/images/{{ site.image }}" class="img-circle" width="40" >
+                </a>
+                <div class="xe-comment">
+                <a href="{{ site.site_url }}" class="site-name">
+                    <strong>{{ site.site_name }}</strong>
+                </a>
+                <p class="site-describe">{{ site.describe }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% block scripts %}
+{{super()}}
+
+<script src="{{url_for('static', filename='js/xenon-toggles.js')}}"></script>
+{% endblock %}
+
+{% endblock %}
