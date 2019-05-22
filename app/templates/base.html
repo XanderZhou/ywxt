@@ -19,6 +19,11 @@
             <a href="{{ url_for('index') }}">首页<span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        <ul class="nav navbar-nav">
+          <li class="{% if request.endpoint == 'nav' %}active{% endif %}">
+            <a href="{{ url_for('nav') }}">导航<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="{% if request.endpoint == 'add_site' %}active{% endif %}">
               <a href="{{ url_for('add_site') }}">新增<span class="sr-only">(current)</span></a>

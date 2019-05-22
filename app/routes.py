@@ -8,11 +8,16 @@ from app.models import Site
 
 @app.route('/')
 def index():
+  return  render_template('index.html')
+
+
+@app.route('/nav')
+def nav():
     xt = Site.query.filter_by(site_type='系统').all()
     wl = Site.query.filter_by(site_type='网络').all()
     cc = Site.query.filter_by(site_type='存储').all()
     qt = Site.query.filter_by(site_type='其它').all()
-    return  render_template('index.html', xt = xt, wl = wl, cc = cc, qt = qt )
+    return  render_template('index.html', xt = xt, wl = wl, cc = cc, qt = qt)
 
 @app.route('/add_site', methods=['GET', 'POST'])
 def add_site():
